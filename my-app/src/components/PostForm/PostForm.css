@@ -25,7 +25,7 @@ form {
   .enable-validation input:valid{
     border: 1px solid seagreen;
   }
-  .enable-validation:invalid button[type="submit"] {
+  .enable-validation:invalid button {
     opacity: 0.6;
     pointer-events: none;
   }
