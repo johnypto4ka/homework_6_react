@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  display: flex;
+  justify-content: center;
+}
+.App {
+  width: 800px;
+}
+.post {
+  
+  padding: 15px;
+  border: 2px solid teal;
+  margin-top: 15px;
+  
+  align-items: center;
+}
+.post_content {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.rating {
+  display: flex;
+}
+.head {
+  text-align: center;
+  margin-top: 15px;
+}
+.remove_btn {
+  padding: 5px 15px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    font-size: 14px;   
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+

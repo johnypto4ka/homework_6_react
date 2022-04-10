@@ -1,0 +1,31 @@
+form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.message__error {
+    color: #ff0000;
+    display: none;
+  }
+  .message__success{
+      color:#0f9248;
+      display: none;
+  }
+  
+  
+  .enable-validation input:invalid + .message__error {
+    display: block;
+  }
+  .enable-validation input:valid ~ .message__success {
+    display: block;
+  }
+  .enable-validation input:invalid{
+    border: 1px solid red;
+  }
+  .enable-validation input:valid{
+    border: 1px solid seagreen;
+  }
+  .enable-validation:invalid button[type="submit"] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
