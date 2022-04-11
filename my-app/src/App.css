@@ -11,7 +11,6 @@
   width: 800px;
 }
 .post {
-  
   padding: 15px;
   border: 2px solid teal;
   margin-top: 15px;
@@ -26,10 +25,11 @@
 .rating {
   display: flex;
 }
-.head {
+.head, .noposts{
   text-align: center;
   margin-top: 15px;
 }
+
 .remove_btn {
   padding: 5px 15px;
     background-color: rgb(255, 0, 0);

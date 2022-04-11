@@ -2,6 +2,8 @@ import React , { useState } from "react";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm/PostForm";
 import Select from "./components/Select/Select";
+import Modal from "./components/Modal/Modal";
+import MyButton from "./components/Button/Button";
 
 import './App.css';
 
@@ -14,9 +16,11 @@ function App() {
   ])
 
   const [selectedSort,setSelectedSort]=useState('');
+  const [isModalActive, setIsModalActive ]=useState(false);
 
   const createPost=(newPost)=>{
     setPosts([...posts,newPost]);
+    setIsModalActive(false);
    }
   
   const removePost = (post) => {
@@ -33,7 +37,11 @@ function App() {
 
   return (
     <div className="App">
-      <PostForm create={createPost}/>
+      <MyButton  onClick={()=>setIsModalActive(true)}>Создать пост</MyButton>
+      <Modal visible={isModalActive}
+        setVisible={setIsModalActive} >
+        <PostForm create={createPost} />
+      </Modal>
       <Select defaultValue="Сортировка по "
              options={[
              {value:"title", name:"По названию"},
@@ -43,7 +51,11 @@ function App() {
         sortPost={sortPost}
      
       />
-      <PostList posts={posts} remove={removePost} title="Список постов"/>
+      { posts.length !== 0 ?
+        <PostList posts={posts} remove={removePost} title="Список постов"/>
+        : <div><h1 className="noposts">Посты не найдены</h1></div>
+      }
+      
       
     </div>
   );

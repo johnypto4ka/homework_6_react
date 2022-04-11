@@ -7,7 +7,6 @@ const PostForm = ({create}) => {
   const [title,setTitle]=useState('');
   const [message,setMessage]=useState('');
   
-
    const onChangeTitle=(e)=>{
     console.log(e.target.value);
     setTitle(e.target.value);
@@ -37,7 +36,8 @@ const PostForm = ({create}) => {
   }; 
 
     return (
-        <form id="form" onSubmit={onAddNewPost} noValidate>
+      <form id="form" onSubmit={onAddNewPost} noValidate>
+        
         <MyInput onChange={onChangeTitle} type="text" placeholder="Название  поста" 
         value={title} minLength="2" maxLength="15" required  />
         <span className="message__error">Заполните поле, количество символов от 2 до 20.</span>
