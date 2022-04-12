@@ -1,12 +1,13 @@
 import React from "react";
 import PostItem from "./PostItem";
- const PostList = ({posts, title, remove}) => {
+ const PostList = ({posts, title, remove, checkedPost, removeCheckedPost}) => {
     console.log(posts) 
     return (
         <div>
             <h1 className="head">{title}</h1>
             {posts.map((post, index) => (
-                <PostItem remove={remove} key={post.id} post={post} number={index+1}/>
+                <PostItem remove={remove} removeCheckedPost={removeCheckedPost} 
+                checkedPost={checkedPost} key={post.id} post={post} number={index+1}/>
             ))}
         </div>
         )

@@ -1,11 +1,27 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { LikeCounter, DislikeCounter} from './Component/Component';
 import '../App.css';
 
 const PostItem = (props) => {
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked);
     
+  };
+
+  useEffect(() => {
+    if(checked){
+    props.checkedPost(props.post)
+  } else {
+    props.removeCheckedPost(props.post)
+    }
+
+  }, [checked])
+
     return (
     <div className="post">
+      <input  onChange={handleChange} type="checkbox" checked={checked}></input>
       <strong>{props.number}  </strong>
       <strong>{props.post.title}</strong>
       <div className="post_content">

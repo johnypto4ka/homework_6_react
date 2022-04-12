@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  min-height: 100%;
+  background: url(../src/components/img/pexels_gradienta_6985003.jpg)  center center/cover no-repeat;
+}
 #root {
   display: flex;
   justify-content: center;
@@ -38,6 +42,17 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
+}
+.selectedItems {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 40px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.selectedPost {
+  padding: 5px 10px;
 }
 
 

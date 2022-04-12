@@ -17,6 +17,7 @@ function App() {
 
   const [selectedSort,setSelectedSort]=useState('');
   const [isModalActive, setIsModalActive ]=useState(false);
+  const [selectedTitle, setSelectedTitle]=useState([]);
 
   const createPost=(newPost)=>{
     setPosts([...posts,newPost]);
@@ -35,6 +36,16 @@ function App() {
     setPosts(newPosts);
 }
 
+  const checkedPost = (post) => {
+    setSelectedTitle([...selectedTitle, post])
+  }
+
+  const removeCheckedPost = (post) => {
+    console.log(post)
+    let newArray = selectedTitle.filter((p) => p.id !== post.id);
+    setSelectedTitle(newArray);
+  }
+
   return (
     <div className="App">
       <MyButton  onClick={()=>setIsModalActive(true)}>Создать пост</MyButton>
@@ -51,8 +62,12 @@ function App() {
         sortPost={sortPost}
      
       />
+      <div className="selectedItems">Выбран посто о : {selectedTitle ? (selectedTitle.map((post)=>(
+        <div className="selectedPost" key={post.id}>{post.title}</div>
+      ))): ''} </div>
+
       { posts.length !== 0 ?
-        <PostList posts={posts} remove={removePost} title="Список постов"/>
+        <PostList posts={posts}  checkedPost={checkedPost} removeCheckedPost={removeCheckedPost} remove={removePost} title="Список постов"/>
         : <div><h1 className="noposts">Посты не найдены</h1></div>
       }
       
