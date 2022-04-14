@@ -1,9 +1,10 @@
-import React , { useState } from "react";
+import React , { useState, useMemo, useEffect } from "react";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm/PostForm";
 import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
 import MyButton from "./components/Button/Button";
+import ExampleComponent from "./components/ComponentWithUseEffect";
 
 import './App.css';
 
