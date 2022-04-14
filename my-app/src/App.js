@@ -62,7 +62,9 @@ function App() {
         sortPost={sortPost}
      
       />
-      <div className="selectedItems">Выбран посто о : {selectedTitle ? (selectedTitle.map((post)=>(
+      <div className="selectedItems">
+        <div className="selectedPostInfo">Выбран посто о:</div>
+        {selectedTitle ? (selectedTitle.map((post)=>(
         <div className="selectedPost" key={post.id}>{post.title}</div>
       ))): ''} </div>
 

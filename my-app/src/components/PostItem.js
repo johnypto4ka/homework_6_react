@@ -21,9 +21,9 @@ const PostItem = (props) => {
 
     return (
     <div className="post">
-      <input  onChange={handleChange} type="checkbox" checked={checked}></input>
-      <strong>{props.number}  </strong>
-      <strong>{props.post.title}</strong>
+      <input onChange={handleChange} type="checkbox" checked={checked}></input>
+      <strong className="post_title">{props.number}</strong>
+      <strong className="post_title">{props.post.title}</strong>
       <div className="post_content">
         <div>{props.post.message}</div>
         <div className="post-btns">

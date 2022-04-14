@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from "./Select.module.css";
 
 const Select = ({options,defaultValue,value, sortPost } ) => {    
        
     return (
         <div>
-       <select value={value} onChange={(e)=>sortPost(e.target.value)} >
+       <select className= {styles.select} value={value} onChange={(e)=>sortPost(e.target.value)} >
            
            <option disabled  value="value">{defaultValue}</option>
           {options.map(option=>
