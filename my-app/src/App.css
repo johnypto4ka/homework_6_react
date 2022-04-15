@@ -14,6 +14,10 @@ html {
 .App {
   width: 800px;
 }
+.instruments {
+  display: flex;
+  justify-content: space-between;
+}
 .post {
   padding: 15px;
   background: rgba(175, 208, 216, 0.25);

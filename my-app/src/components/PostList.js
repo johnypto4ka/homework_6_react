@@ -1,7 +1,6 @@
 import React from "react";
 import PostItem from "./PostItem";
- const PostList = ({posts, title, remove, checkedPost, removeCheckedPost}) => {
-    console.log(posts) 
+ const PostList = ({posts, title, remove, checkedPost, removeCheckedPost}) => { 
     return (
         <div>
             <h1 className="head">{title}</h1>
