@@ -1,4 +1,6 @@
 import React, {useEffect} from "react";
+import { Link } from "react-router-dom";
+
 import { LikeCounter, DislikeCounter} from './Component/Component';
 import '../App.css';
 
@@ -22,8 +24,10 @@ const PostItem = (props) => {
     return (
     <div className="post">
       <input onChange={handleChange} type="checkbox" checked={checked}></input>
-      <strong className="post_title">{props.number}</strong>
-      <strong className="post_title">{props.post.title}</strong>
+      <Link className="post_link" to={`/posts/${props.post.id}`}>
+        <strong>{props.number}</strong>
+        <strong className="post_title">{props.post.title}</strong>
+      </Link>
       <div className="post_content">
         <div>{props.post.message}</div>
         <div className="post-btns">
